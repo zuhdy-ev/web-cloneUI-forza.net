@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/font/Poppins-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins Light";
+  src: url("/font/Poppins-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins Bold";
+  src: url("/font/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins ExtraBold";
+  src: url("/font/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Acumin Pro Cond Black";
+  src: url("/font/AcuminProCond-Black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Acumin Pro Cond Medium";
+  src: url("/font/AcuminProCond-Medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/font/Segoe-UI.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: url("/font/Segoe-UI-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-poppins-light {
+  font-family: "Poppins Light", sans-serif;
+}
+
+.font-poppins-bold {
+  font-family: "Poppins Bold", sans-serif;
+}
+
+.font-poppins-extrabold {
+  font-family: "Poppins ExtraBold", sans-serif;
+}
+
+.font-acumin-black {
+  font-family: "Acumin Pro Cond Black", sans-serif;
+}
+
+.font-acumin-medium {
+  font-family: "Acumin Pro Cond Medium", sans-serif;
+}
+
+.font-segoeUI {
+  font-family: "Segoe UI", sans-serif;
+}
+
+.font-segoeUI-bold {
+  font-family: "Segoe UI Bold", sans-serif;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
