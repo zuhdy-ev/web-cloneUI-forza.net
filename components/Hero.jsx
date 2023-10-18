@@ -7,9 +7,10 @@ import "aos/dist/aos.css";
 // import gradient from "@/public/assets/General/gradient-black.jpg";
 
 export default function HeroBeranda() {
-  
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   return (
@@ -19,23 +20,16 @@ export default function HeroBeranda() {
           <iframe
             width="0"
             height="0"
-            src="https://www.youtube.com/embed/aL4h5cMONIs?autoplay=1&controls=0&loop=1&mute=1"
+            src="https://www.youtube.com/embed/aL4h5cMONIs?loop=1&autoplay=1&controls=0&mute=1&playlist=aL4h5cMONIs"
             title="YouTube video player"
             frameborder="0"
-            allow="autoplay"
-            loop="true"
+            allow="autoplay; loop"
+            Loop
             allowFullScreen
             className="w-full h-full aspect-video scale-150"
           ></iframe>
         </div>
-        <div className="absolute w-screen h-screen border border-black top-0 bg-black opacity-50">
-          {/* <Image
-            src={gradient}
-            width={0}
-            height={0}
-            className="bottom-0 w-full h-full"
-          /> */}
-        </div>
+        <div className="absolute w-screen h-screen border border-black top-0 bg-black opacity-50"></div>
         <div className="absolute w-[43%] h-[85%] flex flex-col items-center justify-center">
           <div className="flex flex-col items-center justify-center">
             <div

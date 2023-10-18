@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import GetTheApp from "@/components/GetTheApp";
-import Menu from "@/components/Menu";
+import Menu1 from "@/components/Menu1";
+import Menu2 from "@/components/Menu2";
 import ForzaJourney from "@/components/ForzaJourney";
 import Community from "@/components/Community";
 import Faq from "@/components/Faq";
@@ -15,8 +16,8 @@ export default function beranda() {
         <Navbar status="beranda" />
         <Hero />
         <GetTheApp />
-        <Menu />
-        <Menu />
+        <Menu1 />
+        <Menu2 />
         <ForzaJourney />
         <Community />
         <Faq />

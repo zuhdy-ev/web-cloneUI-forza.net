@@ -9,6 +9,8 @@ import "aos/dist/aos.css";
 // import menu3 from "@/public/assets/Menu/menu-3.webp";
 // import menu4 from "@/public/assets/Menu/menu-4.webp";
 
+import arrowWhite from "@/public/assets/Nav/nav-arrow-white.png";
+
 export default function Menu() {
   const MenuItems = [
     {
@@ -16,10 +18,11 @@ export default function Menu() {
       category: ["All", "Motorsport"],
       image: (
         <Image
-          src="/assets/Menu/menu-1.webp"
-          width={0}
-          height={0}
-          className="w-full h-full object-cover "
+          src="/assets/Menu/menu-1.png"
+          alt="Menu 1"
+          width={500}
+          height={281}
+          className="transition-transform transform duration-1000 scale-100 group-hover:scale-110 object-cover object-center w-full h-full"
         />
       ),
       date: "14 October 2023",
@@ -31,9 +34,9 @@ export default function Menu() {
       category: ["All", "Horizon"],
       image: (
         <Image
-          src="/assets/Menu/menu-2.webp"
-          width={0}
-          height={0}
+          src="/assets/Menu/menu-2.png"
+          width={500}
+          height={281}
           className="transition-transform transform duration-1000 scale-100 group-hover:scale-110 object-cover object-center w-full h-full"
         />
       ),
@@ -46,9 +49,9 @@ export default function Menu() {
       category: ["All", "Gameplay"],
       image: (
         <Image
-          src="/assets/Menu/menu-3.webp"
-          width={0}
-          height={0}
+          src="/assets/Menu/menu-3.png"
+          width={500}
+          height={281}
           className="transition-transform transform duration-1000 scale-100 group-hover:scale-110 object-cover object-center w-full h-full"
         />
       ),
@@ -61,9 +64,9 @@ export default function Menu() {
       category: ["All", "Community"],
       image: (
         <Image
-          src="/assets/Menu/menu-4.webp"
-          width={0}
-          height={0}
+          src="/assets/Menu/menu-4.png"
+          width={500}
+          height={281}
           className="transition-transform transform duration-1000 scale-100 group-hover:scale-110 object-cover object-center w-full h-full"
         />
       ),
@@ -74,7 +77,9 @@ export default function Menu() {
   ];
 
   useEffect(() => {
-    AOS.init();
+    AOS.init({
+      once: true,
+    });
   }, []);
 
   return (
@@ -88,7 +93,7 @@ export default function Menu() {
               data-aos-easing="linear"
               data-aos-duration="500"
             >
-              LATEST NEWS
+              FEATURED EVENETS
             </div>
             <div
               className="h-full w-3/5 flex items-center justify-end  text-white gap-8 text-[0.8rem]"
@@ -112,18 +117,14 @@ export default function Menu() {
                   data-aos-easing="linear"
                   data-aos-duration="100"
                 >
-                  <div className="w-[0.5rem] h-full bg-orange-500 rounded-tl-sm rounded-bl-sm"></div>
+                  <div
+                    className={`w-[0.5rem] h-full bg-[#fdb62e] rounded-tl-sm rounded-bl-sm`}
+                  ></div>
                   <div
                     className="flex flex-col w-full h-full rounded-tr-none rounded-br-3xl bg-[#333333]"
                     key={item.id}
                   >
                     <div className=" w-full h-[40%] rounded-tr-none group overflow-hidden">
-                      {/* <Image
-                        src={item.image}
-                        width={0}
-                        height={0}
-                        className="transition-transform transform duration-1000 scale-100 group-hover:scale-110 object-cover object-center w-full h-full"
-                      /> */}
                       {item.image}
                     </div>
                     <div className=" w-full h-[50%] rounded-br-3xl p-5">
@@ -140,7 +141,13 @@ export default function Menu() {
                     <div className="text-white h-[10%] text-[0.8rem] px-5 flex items-center justify-start">
                       <div>View Article</div>
                       <span className="pl-5 group-hover:pl-7 duration-1000">
-                        (arrow)
+                        <Image
+                          src={arrowWhite}
+                          width={5}
+                          height={5}
+                          alt="arrow"
+                          className=""
+                        />
                       </span>
                     </div>
                   </div>
@@ -148,6 +155,7 @@ export default function Menu() {
               </>
             ))}
           </div>
+          <button className="text-white font-acumin-black w-full h-10 flex items-center justify-end -translate-x-10 group">More News <span className="translate-x-5 group-hover:translate-x-7 duration-500">{`>>>`}</span></button>
         </div>
       </div>
     </>
