@@ -5,9 +5,9 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import bgFaq from "@/public/assets/FAQ/bgFaq.webp";
-import forzaMotorsport from "@/public/assets/FAQ/forzaMotorsport.webp";
-import forzaHorizon from "@/public/assets/FAQ/forzaHorizon.png";
+import bgFaq from "@/public/assets/Faq/bgFaq.webp";
+import forzaMotorsport from "@/public/assets/Faq/forzaMotorsport.webp";
+import forzaHorizon from "@/public/assets/Faq/forzaHorizon.png";
 
 export default function faq() {
   useEffect(() => {

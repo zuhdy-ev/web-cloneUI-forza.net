@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -19,7 +19,6 @@ import logoForza from "@/public/assets/Nav/logoForzaNav.png";
 // ];
 
 export default function Navbar(condition) {
-  
   const menu = [
     { label: "News" },
     { label: "Motorsport" },
@@ -28,21 +27,46 @@ export default function Navbar(condition) {
     { label: "Forums" },
   ];
 
-  const [color, setColor] = useState(false)
-  const changeColor = () => {
-    if (window.scrollY >= 85) {
-      setColor(true)
-    } else {
-      setColor(false)
+  const [color, setColor] = useState(false);
+  
+  // const changeColor = () => {
+  //   if (window.scrollY >= 85) {
+  //     setColor(true)
+  //   } else {
+  //     setColor(false)
+  //   }
+  // }
+  // window.addEventListener('scroll', changeColor)
+
+  useEffect(() => {
+    const changeColor = () => {
+      if (typeof window !== "undefined" && window.scrollY >= 85) {
+        setColor(true);
+      } else {
+        setColor(false);
+      }
+    };
+
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", changeColor);
     }
-  }
-  window.addEventListener('scroll', changeColor)
+
+    return () => {
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", changeColor);
+      }
+    };
+  }, []);
 
   return (
     <>
       <div className="z-[999] relative">
         {/* @Main Navbar */}
-        <div className={`fixed ${color ? 'bg-black opacity-70 pb-2' : 'bg-transparent'} bg-black w-full h-[85px] flex justify-center items-center drop-shadow-lg overflow-hidden duration-300`}>
+        <div
+          className={`fixed ${
+            color ? "bg-black opacity-70 pb-2" : "bg-transparent"
+          } bg-black w-full h-[85px] flex justify-center items-center drop-shadow-lg overflow-hidden duration-300`}
+        >
           {/* --- Content --- */}
           <div className="w-[90%] md:w-[95%] h-[85%] flex justify-between items-center">
             {/* Right */}
